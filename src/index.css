@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #252525;
+}
+a {
+  text-decoration: none;
+  color: #252525;
+}
+.nav {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+}
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.nav li:first-child {
+  padding-left: 0;
+}
+ul {
+  padding-left: 0;
+}
+li {
+  list-style-type: none;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+.pager-header {
+  margin-bottom: 1.5rem !important;
+}
+.containerDetail {
+  padding: 2rem 2rem !important;
+  margin-bottom: 1rem !important;
+  border-radius: .3rem;
+  color: white;
+  background-color: #3b78c1 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.containerDetail:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+.containerQuestion {
+  padding: 2rem 2rem !important;
+  margin-bottom: 1rem !important;
+  border-radius: .3rem;
+  color: white;
+  background-color: #3b78c1 !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+.questionTitle {
+  cursor: pointer;
+}
+.fade:not(.show){
+  opacity: 1 !important;
+}
+.questionNew {
+  color: white;
+  background-color: #7aabdc !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease-in-out;
+  margin: 10px;
+}
+.questionNew:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+}
+.questionAnswer {
+  color: #054205;
+}
+.questionUnAnswer {
+  color: red;
+}
+.changeSelect {
+  cursor: pointer;
+}
+.newQuestion {
+  padding-bottom: 30px;
+}
+.authorNameClass {
+  display: flex;
+}
+.signInAuthor {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.progress-bar {
+  background-color: #7b28a7 !important;
+}
+.logoutButton {
+  color: #4f7bff;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 45px;
+  margin-left: -13em;
+}
+.logoutIcon {
+  position: absolute;
+  top: 15px;
+}
+#authorName {
+  margin-top: 10px;
+  margin-left: 25px;
+  height: 30px; 
+}
