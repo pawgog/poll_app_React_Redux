@@ -3,6 +3,7 @@ import { _saveQuestionAnswer, _saveQuestion } from '../utils/_DATA'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const TOGGLE_QUESTION = 'TOGGLE_QUESTION'
 export const ADD_QUESTION = 'ADD_QUESTION'
+export const CHANGE_QUESTION = 'CHANGE_QUESTION'
 
 export function addQuestion (question) {
   return {
