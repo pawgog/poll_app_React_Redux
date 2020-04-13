@@ -7,9 +7,9 @@ This project was created as one exercise of course learning React.js
 
 ## Run It On Your Machine
 After download project you can initialize that by using command in your terminal console:
-cd/poll_app
-npm install
-npm start
+- go to cd/poll_app
+- `$ npm install`
+- `$ npm start`
 
 ## Demo version
 https://zen-kowalevski-6b102d.netlify.com
