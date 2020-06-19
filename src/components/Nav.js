@@ -1,29 +1,29 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-export default function Nav () {
+export default function Nav() {
   return (
-    <nav className='nav'>
+    <nav className="nav">
       <ul>
         <li>
-          <NavLink to='/' exact activeClassName='active'>
+          <NavLink to="/" exact activeClassName="active">
             Home
           </NavLink>
           <span> / </span>
         </li>
         <li>
-          <NavLink to='/new' activeClassName='active'>
+          <NavLink to="/new" activeClassName="active">
             New Poll
           </NavLink>
           <span> / </span>
         </li>
         <li>
-          <NavLink to='/leaderboard' activeClassName='active'>
+          <NavLink to="/leaderboard" activeClassName="active">
             Authors Rank
           </NavLink>
           <span> / </span>
         </li>
       </ul>
     </nav>
-  )
+  );
 }

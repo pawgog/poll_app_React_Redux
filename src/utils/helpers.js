@@ -1,6 +1,5 @@
-export function formatQuestion ( question, authedUser ) {
-  const { id, timestamp, author, optionOne, optionTwo } = question
-
+export function formatQuestion(question, authedUser) {
+  const { id, timestamp, author, optionOne, optionTwo } = question;
 
   return {
     id,
@@ -8,5 +7,5 @@ export function formatQuestion ( question, authedUser ) {
     author,
     optionOne,
     optionTwo,
-  }
+  };
 }
