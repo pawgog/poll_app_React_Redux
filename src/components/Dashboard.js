@@ -4,22 +4,16 @@ import { Grid, Row, Col, PageHeader, Tabs, Tab } from 'react-bootstrap';
 import Question from './Question';
 
 class Dashboard extends Component {
-  constructor(props, context) {
-    super(props, context);
-
-    this.handleSelect = this.handleSelect.bind(this);
-
-    this.state = {
+  state = {
       key: 1,
     };
-  }
 
-  handleSelect(key) {
+  handleSelect = (key) => {
     this.setState({ key });
   }
 
   render() {
-    const { userQuestions, currentUser } = this.props;
+    // const { userQuestions, currentUser } = this.props;
 
     return (
       <div>
@@ -82,11 +76,7 @@ function mapStateToProps({ questions, users, authedUser }) {
   Object.keys(questions)
     .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
     .forEach((res, i) => {
-      if (array.includes(res) === true) {
-        return null;
-      } else {
-        return userUnAnswers.push(res);
-      }
+      return array.includes(res) === true ? null : userUnAnswers.push(res)
     });
 
   let userAnswers = Object.keys(userQuestions)

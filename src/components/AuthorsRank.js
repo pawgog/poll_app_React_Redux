@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col } from 'react-bootstrap';
-import NewQuestion from './NewQuestion';
-import Question from './Question';
 
 class AuthorsRank extends Component {
   state = {
@@ -11,14 +9,14 @@ class AuthorsRank extends Component {
 
   render() {
     const { usersArray } = this.props;
-    let authorAvatarDisplay = '';
+    // let authorAvatarDisplay = '';
 
     return (
       <div>
         <Grid>
           <Row className="show-grid">
             <Col sm={12} md={12}>
-              {this.props.usersArray.map((user) => {
+              {usersArray.map((user) => {
                 return (
                   <div
                     key={user.id}
@@ -65,9 +63,9 @@ class AuthorsRank extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }, props) {
+function mapStateToProps({ users }, props) {
   let usersArray = Object.values(users);
-  let answeres = usersArray.answers;
+  // let answeres = usersArray.answers;
   return {
     usersArray,
   };

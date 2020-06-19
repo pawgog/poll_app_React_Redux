@@ -24,23 +24,20 @@ class NewQuestion extends Component {
   handleChange = (name, e) => {
     console.log('New Question e:', name, e.target.value);
 
-    const { dispatch, authedUser } = this.props;
-    this.state.author = authedUser;
-
+    const { authedUser } = this.props;
     const contact = this.state;
     contact[name] = e.target.value;
 
     this.setState({
       question: contact,
+      author: authedUser
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { authedUser } = this.props;
-
+    const { dispatch, authedUser } = this.props;
     const { question } = this.state;
-    const { dispatch } = this.props;
 
     console.log('New Question', question);
 
@@ -94,8 +91,10 @@ class NewQuestion extends Component {
     );
   }
 }
-function mapStateToProps({ authedUser, users, questions }, { id }) {
+function mapStateToProps({ authedUser, questions }, { id }) {
   const question = questions[id];
+  console.log(question);
+  
 
   return {
     authedUser,

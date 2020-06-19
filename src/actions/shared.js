@@ -6,7 +6,6 @@ import { setAuthedUser } from '../actions/authedUser'
 
 
 export function handleInitialData (selectAuthor) {
-  console.log('AUTHED_ID', AUTHED_ID );
   const AUTHED_ID = selectAuthor
   return (dispatch) => {
     return getInitialData()

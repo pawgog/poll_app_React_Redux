@@ -3,9 +3,6 @@ import { connect } from 'react-redux'
 import { handleToggleQuestion } from '../actions/questions'
 import { handleInitialData } from '../actions/shared'
 import { Grid, Row, Col, ProgressBar } from 'react-bootstrap';
-import NewQuestion from './NewQuestion'
-import Question from './Question'
-
 
 class QuestionItem extends Component {
     state = {
@@ -13,12 +10,9 @@ class QuestionItem extends Component {
     }
 
     changeSelect = (event, option) => {
-   
         event.preventDefault();
 
-
-    
-        const { dispatch, question, authedUser, qid, optionOne, optionTwo } = this.props
+        const { dispatch, question, authedUser, optionOne, optionTwo } = this.props
          
         if(option === 'optionOne') {
             if(!optionOne.votes.includes(authedUser)){
@@ -27,7 +21,7 @@ class QuestionItem extends Component {
                     answer: option,
                     authedUser
                   }))
-                  this.props.dispatch(handleInitialData(authedUser))
+                  dispatch(handleInitialData(authedUser))
             }
         }else if(option === 'optionTwo') {
             if(!optionTwo.votes.includes(authedUser)){
@@ -36,15 +30,15 @@ class QuestionItem extends Component {
                     answer: option,
                     authedUser
                 }))
-                this.props.dispatch(handleInitialData(authedUser))
+                dispatch(handleInitialData(authedUser))
             }
         }
       }
 
     render(){
         const { id, authorName, authorNameData, optionOne, optionTwo, question, users } = this.props
-        let authorAvatarDisplay = ''
-        if(question !== 'error'){
+        // let authorAvatarDisplay = ''
+        // if(question !== 'error'){
 
         const currentVotesOne = optionOne.votes.length;
         const currentVotesTwo = optionTwo.votes.length;
@@ -59,6 +53,7 @@ class QuestionItem extends Component {
     
         return (
             <div>
+              {question !== 'error' ?
                 <Grid>
                     <Row className="show-grid">
                         <Col sm={12} md={12}>
@@ -92,21 +87,19 @@ class QuestionItem extends Component {
                         </Col>
                     </Row>
                 </Grid>
+              :
+                <Grid>
+                  <Row className="show-grid text-center">
+                      <Col sm={12} md={12}>
+                          <p>Question doesn't existe</p>
+                      </Col>
+                  </Row>
+                </Grid>
+              }
             </div>
         )
-    }else {
-        return (
-            <Grid>
-                <Row className="show-grid text-center">
-                    <Col sm={12} md={12}>
-                        <p>Question doesn't existe</p>
-                    </Col>
-                </Row>
-            </Grid>
-        )
+      }
     }
-}
-}
 
 function mapStateToProps ({authedUser, users, questions}, props) {
  

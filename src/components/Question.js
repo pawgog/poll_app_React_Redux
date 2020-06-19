@@ -22,10 +22,9 @@ class Question extends Component {
  
     event.preventDefault();
 
-    const { dispatch, question, authedUser, qid, optionOne, optionTwo } = this.props
+    const { dispatch, question, authedUser, qid, optionTwo } = this.props
       console.log('changeSelect', qid, question, authedUser, question.optionOne.votes.indexOf(authedUser), optionTwo)
     dispatch(handleToggleQuestion({
-      
       qid: question.id,
       answer: option,
       authedUser
@@ -37,11 +36,9 @@ class Question extends Component {
   }
 
     render() {
-      const { question } = this.props;
-      const { authorName } = this.props;
-      const { authedUser } = this.props;
-      const { author, timestamp, optionOne, optionTwo, id } = question
+      const { question, option } = this.props;
       const { toQuestion } = this.state
+      const { optionOne, optionTwo, id } = question
       // const authorName = users[author].name;
       if(toQuestion === true){
         return (
@@ -52,7 +49,7 @@ class Question extends Component {
       if(question === null) {
         return <p>Question doesn`t existe</p>
       }
-      if(this.props.option === 'optionOne'){
+      if(option === 'optionOne'){
       return (
       <div className="containerQuestion">
         <Grid>
@@ -81,7 +78,7 @@ class Question extends Component {
         <hr/>
       </div>
       )
-    } else if(this.props.option === 'optionTwo') {
+    } else if(option === 'optionTwo') {
       return (
       <div className="containerQuestion">
         <Grid>

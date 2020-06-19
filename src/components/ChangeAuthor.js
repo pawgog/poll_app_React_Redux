@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { SplitButton, MenuItem } from 'react-bootstrap';
 import TiExportOutline from 'react-icons/lib/ti/export-outline';
 import { handleInitialData } from '../actions/shared';
 
@@ -29,9 +28,9 @@ class ChangeAuthor extends Component {
   };
   render() {
     const { selectAuthor, toLogin } = this.state;
-    const { userQuestions, currentUser, authorAvatar } = this.props;
+    const { authorAvatar } = this.props;
 
-    let authorAvatarDisplay = '';
+    // let authorAvatarDisplay = '';
 
     if (toLogin === true) {
       return <Redirect to="/login" />;
@@ -47,7 +46,7 @@ class ChangeAuthor extends Component {
         </div>
         <select
           id="authorName"
-          value={this.state.selectAuthor}
+          value={selectAuthor}
           onChange={this.handleChange}
         >
           <option value="" disabled>

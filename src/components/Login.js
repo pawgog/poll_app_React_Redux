@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SplitButton, MenuItem } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
 import { handleInitialData } from '../actions/shared';
 
@@ -21,7 +20,7 @@ class LoginPanel extends Component {
 
   render() {
     const { selectAuthor, toHome } = this.state;
-    const { userQuestions, currentUser, authorAvatar } = this.props;
+    // const { userQuestions, currentUser, authorAvatar } = this.props;
 
     let authorAvatarDisplay = '';
     if (toHome === true) {
@@ -32,7 +31,7 @@ class LoginPanel extends Component {
         <h1>Please Sign In</h1>
         <select
           id="authorName"
-          value={this.state.selectAuthor}
+          value={selectAuthor}
           onChange={this.handleChange}
         >
           <option value="" disabled>
