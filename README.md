@@ -12,7 +12,7 @@ After download project you can initialize that by using command in your terminal
 - `$ npm start`
 
 ## Demo version
-https://zen-kowalevski-6b102d.netlify.com
+[Would you rather? - demo site](https://zen-kowalevski-6b102d.netlify.com)
 
 ## License
 Application was build by Pawel Gogola under the MIT license.
