@@ -29,7 +29,7 @@ class Question extends Component {
       answer: option,
       authedUser
     }))
-    this.props.dispatch(handleInitialData(authedUser))
+    dispatch(handleInitialData(authedUser))
     this.setState(() => ({
       toQuestion: true,
     }))
@@ -39,6 +39,8 @@ class Question extends Component {
       const { question, option } = this.props;
       const { toQuestion } = this.state
       const { optionOne, optionTwo, id } = question
+      console.log('question', question);
+      
       // const authorName = users[author].name;
       if(toQuestion === true){
         return (
@@ -49,20 +51,28 @@ class Question extends Component {
       if(question === null) {
         return <p>Question doesn`t existe</p>
       }
-      if(option === 'optionOne'){
+      else {
       return (
       <div className="containerQuestion">
         <Grid>
           <Row className="show-grid text-center">
             <Col sm={11} md={11}>
             <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionOne')}>
-              <div id={id} className='questionNew questionAnswer'>
-              <TiTickOutline className='tweet-icon' />
+              <div id={id} className={`questionNew ${option === 'optionOne' ? 'questionAnswer':''} ${option === 'optionTwo' ? 'questionUnAnswer':''}`}>
+              {option === undefined ?
+                <TiMediaRecordOutline className='tweet-icon' />
+                :
+                <TiTickOutline className='tweet-icon' />
+              }
               {optionOne.text}</div>
             </div>
             <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionTwo')}>
-              <div id={id} className='questionNew questionUnAnswer'>
-              <TiTimesOutline className='tweet-icon' />
+              <div id={id} className={`questionNew ${option === 'optionOne' ? 'questionUnAnswer':''} ${option === 'optionTwo' ? 'questionAnswer':''}`}>
+              {option === undefined ?
+                <TiMediaRecordOutline className='tweet-icon' />
+                :
+                <TiTimesOutline className='tweet-icon' />
+              }
               {optionTwo.text}</div>
             </div>      
             </Col>
@@ -72,64 +82,6 @@ class Question extends Component {
               <IoDocumentText size={35} color={'white'} style={{marginTop: '20px'}} className='tweet-icon' />
             </div>
             </Link>
-            </Col>
-          </Row>
-        </Grid>
-        <hr/>
-      </div>
-      )
-    } else if(option === 'optionTwo') {
-      return (
-      <div className="containerQuestion">
-        <Grid>
-          <Row className="show-grid text-center">
-            <Col sm={11} md={11}>
-              <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionOne')}>
-                <div id={id} className='questionNew questionUnAnswer'>
-                  <TiTimesOutline className='tweet-icon' />
-                  {optionOne.text}</div>
-                </div>
-              <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionTwo')}>
-                <div id={id} className='questionNew questionAnswer'>
-                  <TiTickOutline className='tweet-icon' />
-                  {optionTwo.text}</div>
-              </div>
-            </Col>
-            <Col sm={1} md={1}>
-              <Link to={`/question/${id}`}>
-              <div id={id}>
-                <IoDocumentText size={35} color={'white'} style={{marginTop: '20px'}} className='tweet-icon' />
-              </div>
-              </Link>
-            </Col>
-          </Row>
-        </Grid>
-        <hr/>
-      </div>
-      )
-    } else {
-      return (
-      <div className="containerQuestion">
-        <Grid>
-          <Row className="show-grid text-center">
-            <Col sm={11} md={11}>
-              <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionOne')}>
-                <div id={id} className='questionNew'>
-                  <TiMediaRecordOutline className='tweet-icon' />
-                {optionOne.text}</div>
-              </div>
-              <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionTwo')}>
-                <div id={id} className='questionNew'>
-                  <TiMediaRecordOutline className='tweet-icon' />
-                {optionTwo.text}</div>
-              </div>
-            </Col>
-            <Col sm={1} md={1}>
-              <Link to={`/question/${id}`}>
-              <div id={id}>
-                <IoDocumentText size={35} color={'white'} style={{marginTop: '20px'}} className='tweet-icon' />
-              </div>
-              </Link>
             </Col>
           </Row>
         </Grid>
