@@ -18,16 +18,18 @@ class App extends Component {
       <Router>
         <Fragment>
           <div>
+            {loading === true ? null :
             <Grid>
               <Row className="show-grid">
                 <Col sm={10} md={10}>
                   <Nav />
                 </Col>
                 <Col sm={2} md={2}>
-                  {loading === true ? null : <ChangeAuthor />}
+                  <ChangeAuthor />
                 </Col>
               </Row>
             </Grid>
+            }
             {loading === true ? (
               <div>
                 <LoginPanel />

@@ -13,7 +13,8 @@ class Dashboard extends Component {
   }
 
   render() {
-    // const { userQuestions, currentUser } = this.props;
+    const { userAnswers, userUnAnswers } = this.props;
+    const { key } = this.state;
 
     return (
       <div>
@@ -22,14 +23,14 @@ class Dashboard extends Component {
           <Row className="show-grid">
             <Col sm={12} md={12}>
               <Tabs
-                activeKey={this.state.key}
+                activeKey={key}
                 onSelect={this.handleSelect}
                 id="uncontrolled-tab-example"
               >
                 <Tab eventKey={1} title="Unanswer Questions">
-                  {this.props.userUnAnswers.length > 0 && (
+                  {userUnAnswers.length > 0 && (
                     <ul className="dashboard-list">
-                      {this.props.userUnAnswers.map((id) => {
+                      {userUnAnswers.map((id) => {
                         return (
                           <div key={id}>
                             <li>
@@ -41,13 +42,13 @@ class Dashboard extends Component {
                       })}
                     </ul>
                   )}
-                  {this.props.userUnAnswers.length === 0 && (
+                  {userUnAnswers.length === 0 && (
                     <h2>There is no more unanswers questions!</h2>
                   )}
                 </Tab>
                 <Tab eventKey={2} title="Answer Questions">
                   <ul className="dashboard-list">
-                    {this.props.userAnswers.map((id) => {
+                    {userAnswers.map((id) => {
                       return (
                         <div key={id}>
                           <li>

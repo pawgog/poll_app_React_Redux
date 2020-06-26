@@ -30,7 +30,7 @@ class NewQuestion extends Component {
 
     this.setState({
       question: contact,
-      author: authedUser
+      author: authedUser,
     });
   };
 
@@ -48,7 +48,7 @@ class NewQuestion extends Component {
       optionOneText: '',
       optionTwoText: '',
     }));
-    this.props.dispatch(handleInitialData(authedUser));
+    dispatch(handleInitialData(authedUser));
   };
   render() {
     const { toHome, optionOneText, optionTwoText } = this.state;
@@ -77,8 +77,9 @@ class NewQuestion extends Component {
                     onChange={this.handleChange.bind(this, 'optionTwoText')}
                   />
                   <Button
+                    bsStyle="info"
                     type="submit"
-                    disabled={optionOneText === '' && optionTwoText === ''}
+                    disabled={optionOneText === '' || optionTwoText === ''}
                   >
                     Add
                   </Button>
@@ -94,7 +95,6 @@ class NewQuestion extends Component {
 function mapStateToProps({ authedUser, questions }, { id }) {
   const question = questions[id];
   console.log(question);
-  
 
   return {
     authedUser,

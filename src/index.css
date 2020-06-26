@@ -8,9 +8,12 @@ a {
   text-decoration: none;
   color: #252525;
 }
-.nav {
-  margin-top: 5px !important;
-  margin-bottom: 10px !important;
+li a:hover {
+  text-decoration: none;
+}
+div .nav {
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 .nav ul {
   display: flex;
@@ -20,6 +23,18 @@ a {
 }
 .nav li:first-child {
   padding-left: 0;
+}
+.nav .navLink li::after {
+  content: '/';
+  margin: 0 15px;
+  color: #000000;
+  text-decoration: none;
+}
+.nav .navLink li:last-child:after {
+  content: '';
+}
+.nav .navLink li::after:hover {
+  text-decoration: none;
 }
 ul {
   padding-left: 0;
@@ -33,45 +48,50 @@ li {
 .center {
   text-align: center;
 }
-.pager-header {
-  margin-bottom: 1.5rem !important;
+
+div .page-header {
+  margin-bottom: 1.5rem;
 }
-.containerDetail {
-  padding: 2rem 2rem !important;
-  margin-bottom: 1rem !important;
-  border-radius: .3rem;
+div .containerDetail {
+  padding: 1.5rem 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
   color: white;
-  background-color: #3b78c1 !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  transition: box-shadow 0.3s ease-in-out;
+  background-color: #3b78c1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
-.containerDetail:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+div .containerDetail:hover {
+  transform: scale(1.02);
 }
 .containerQuestion {
-  padding: 2rem 2rem !important;
-  margin-bottom: 1rem !important;
-  border-radius: .3rem;
+  padding: 2rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.3rem;
   color: white;
-  background-color: #3b78c1 !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  background-color: rgba(145, 187, 232, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease-in-out;
 }
 .questionTitle {
   cursor: pointer;
 }
-.fade:not(.show){
+.fade:not(.show) {
   opacity: 1 !important;
+}
+div .form-control {
+  margin: 10px 0;
 }
 .questionNew {
   color: white;
-  background-color: #7aabdc !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  transition: box-shadow 0.3s ease-in-out;
+  background-color: #7aabdc;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
   margin: 10px;
 }
 .questionNew:hover {
-  box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+  transform: scale(1.05);
 }
 .questionAnswer {
   color: #054205;
@@ -94,8 +114,8 @@ li {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.progress-bar {
-  background-color: #7b28a7 !important;
+div .progress-bar {
+  background-color: #7b28a7;
 }
 .logoutButton {
   color: #4f7bff;
@@ -111,5 +131,5 @@ li {
 #authorName {
   margin-top: 10px;
   margin-left: 25px;
-  height: 30px; 
+  height: 30px;
 }
