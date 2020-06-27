@@ -24,16 +24,16 @@ div .nav {
 .nav li:first-child {
   padding-left: 0;
 }
-.nav .nav-link li::after {
+.nav li::after {
   content: '/';
-  margin: 0 15px;
+  margin: 0 10px 0 15px;
   color: #000000;
   text-decoration: none;
 }
-.nav .nav-link li:last-child:after {
+.nav li:last-child:after {
   content: '';
 }
-.nav .nav-link li::after:hover {
+.nav li::after:hover {
   text-decoration: none;
 }
 ul {
@@ -67,6 +67,7 @@ div .container-detail:hover {
 }
 .container-question {
   padding: 2rem 2rem;
+  margin-top: 5px;
   margin-bottom: 1rem;
   border-radius: 0.3rem;
   color: white;

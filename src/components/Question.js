@@ -59,8 +59,11 @@ class Question extends Component {
               <div id={id} className={`question-new ${option === 'optionOne' ? 'question-answer':''} ${option === 'optionTwo' ? 'question-un-answer':''}`}>
               {option === undefined ?
                 <TiMediaRecordOutline className='tweet-icon' />
-                :
+                : option === 'optionOne' ?
                 <TiTickOutline className='tweet-icon' />
+                : option === 'optionTwo' ?
+                <TiTimesOutline className='tweet-icon' />
+                : null
               }
               {optionOne.text}</div>
             </div>
@@ -68,8 +71,11 @@ class Question extends Component {
               <div id={id} className={`question-new ${option === 'optionOne' ? 'question-un-answer':''} ${option === 'optionTwo' ? 'question-answer':''}`}>
               {option === undefined ?
                 <TiMediaRecordOutline className='tweet-icon' />
-                :
+                : option === 'optionOne' ?
                 <TiTimesOutline className='tweet-icon' />
+                : option === 'optionTwo' ?
+                <TiTickOutline className='tweet-icon' />
+                : null
               }
               {optionTwo.text}</div>
             </div>      
