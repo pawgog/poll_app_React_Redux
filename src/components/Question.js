@@ -23,7 +23,7 @@ class Question extends Component {
     event.preventDefault();
 
     const { dispatch, question, authedUser, qid, optionTwo } = this.props
-      console.log('changeSelect', qid, question, authedUser, question.optionOne.votes.indexOf(authedUser), optionTwo)
+      // console.log('changeSelect', qid, question, authedUser, question.optionOne.votes.indexOf(authedUser), optionTwo)
     dispatch(handleToggleQuestion({
       qid: question.id,
       answer: option,
@@ -39,9 +39,7 @@ class Question extends Component {
       const { question, option } = this.props;
       const { toQuestion } = this.state
       const { optionOne, optionTwo, id } = question
-      console.log('question', question);
-      
-      // const authorName = users[author].name;
+
       if(toQuestion === true){
         return (
           <Redirect to={`/question/${id}`} />
@@ -53,12 +51,12 @@ class Question extends Component {
       }
       else {
       return (
-      <div className="containerQuestion">
+      <div className="container-question">
         <Grid>
           <Row className="show-grid text-center">
             <Col sm={11} md={11}>
-            <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionOne')}>
-              <div id={id} className={`questionNew ${option === 'optionOne' ? 'questionAnswer':''} ${option === 'optionTwo' ? 'questionUnAnswer':''}`}>
+            <div className="change-select" onClick={(e) => this.changeSelect(e, 'optionOne')}>
+              <div id={id} className={`question-new ${option === 'optionOne' ? 'question-answer':''} ${option === 'optionTwo' ? 'question-un-answer':''}`}>
               {option === undefined ?
                 <TiMediaRecordOutline className='tweet-icon' />
                 :
@@ -66,8 +64,8 @@ class Question extends Component {
               }
               {optionOne.text}</div>
             </div>
-            <div className="changeSelect" onClick={(e) => this.changeSelect(e, 'optionTwo')}>
-              <div id={id} className={`questionNew ${option === 'optionOne' ? 'questionUnAnswer':''} ${option === 'optionTwo' ? 'questionAnswer':''}`}>
+            <div className="change-select" onClick={(e) => this.changeSelect(e, 'optionTwo')}>
+              <div id={id} className={`question-new ${option === 'optionOne' ? 'question-un-answer':''} ${option === 'optionTwo' ? 'question-answer':''}`}>
               {option === undefined ?
                 <TiMediaRecordOutline className='tweet-icon' />
                 :

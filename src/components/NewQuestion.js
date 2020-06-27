@@ -22,8 +22,6 @@ class NewQuestion extends Component {
   };
 
   handleChange = (name, e) => {
-    console.log('New Question e:', name, e.target.value);
-
     const { authedUser } = this.props;
     const contact = this.state;
     contact[name] = e.target.value;
@@ -39,7 +37,7 @@ class NewQuestion extends Component {
     const { dispatch, authedUser } = this.props;
     const { question } = this.state;
 
-    console.log('New Question', question);
+    // console.log('New Question', question);
 
     dispatch(handleAddQuestion(question));
 
@@ -59,7 +57,7 @@ class NewQuestion extends Component {
 
     return (
       <div>
-        <h1 className="newQuestion text-center">New Question</h1>
+        <h1 className="new-question text-center">New Question</h1>
         <Grid>
           <Row className="show-grid">
             <Col sm={12} md={12}>

@@ -20,7 +20,7 @@ class AuthorsRank extends Component {
                 return (
                   <div
                     key={user.id}
-                    className="authorNameClass containerDetail"
+                    className="author-name-class container-detail"
                   >
                     <Col sm={4} md={4}>
                       <img

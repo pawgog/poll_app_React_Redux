@@ -58,7 +58,7 @@ class QuestionItem extends Component {
                     <Row className="show-grid">
                         <Col sm={12} md={12}>
                             <div id={id}>
-                                <div className="authorNameClass containerDetail">
+                                <div className="author-name-class container-detail">
                                 <Col sm={4} md={4}>
                                 <h3>Author</h3>
                                 <div className="question">
@@ -68,7 +68,7 @@ class QuestionItem extends Component {
                                 </Col>
                                 <Col sm={4} md={4}>
                                 <div>Would you rather?</div>
-                                <h3 className="questionTitle" onClick={(e) => this.changeSelect(e, 'optionOne')}>{optionOne.text}</h3>
+                                <h3 className="question-title" onClick={(e) => this.changeSelect(e, 'optionOne')}>{optionOne.text}</h3>
                                 <div className="question">
                                     <span>Votes: </span><b>{optionOne.votes.length}</b>
                                     <ProgressBar striped bsStyle="info" max={maxUsers} now={currentVotesOne} label={`${currentVotesOnePercent}%`} />
@@ -76,7 +76,7 @@ class QuestionItem extends Component {
                                 </Col>
                                 <Col sm={4} md={4}>
                                 <div>Would you rather?</div>
-                                <h3 className="questionTitle" onClick={(e) => this.changeSelect(e, 'optionTwo')}>{optionTwo.text}</h3>
+                                <h3 className="question-title" onClick={(e) => this.changeSelect(e, 'optionTwo')}>{optionTwo.text}</h3>
                                 <div className="question">
                                     <span>Votes: </span><b>{optionTwo.votes.length}</b>
                                     <ProgressBar striped bsStyle="info" max={maxUsers} now={currentVotesTwo} label={`${currentVotesTwoPercent}%`} />

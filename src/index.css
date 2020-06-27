@@ -24,16 +24,16 @@ div .nav {
 .nav li:first-child {
   padding-left: 0;
 }
-.nav .navLink li::after {
+.nav .nav-link li::after {
   content: '/';
   margin: 0 15px;
   color: #000000;
   text-decoration: none;
 }
-.nav .navLink li:last-child:after {
+.nav .nav-link li:last-child:after {
   content: '';
 }
-.nav .navLink li::after:hover {
+.nav .nav-link li::after:hover {
   text-decoration: none;
 }
 ul {
@@ -52,7 +52,7 @@ li {
 div .page-header {
   margin-bottom: 1.5rem;
 }
-div .containerDetail {
+div .container-detail {
   padding: 1.5rem 2rem;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
@@ -62,10 +62,10 @@ div .containerDetail {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
 }
-div .containerDetail:hover {
+div .container-detail:hover {
   transform: scale(1.02);
 }
-.containerQuestion {
+.container-question {
   padding: 2rem 2rem;
   margin-bottom: 1rem;
   border-radius: 0.3rem;
@@ -74,7 +74,7 @@ div .containerDetail:hover {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease-in-out;
 }
-.questionTitle {
+.question-title {
   cursor: pointer;
 }
 .fade:not(.show) {
@@ -83,32 +83,32 @@ div .containerDetail:hover {
 div .form-control {
   margin: 10px 0;
 }
-.questionNew {
+.question-new {
   color: white;
   background-color: #7aabdc;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
   margin: 10px;
 }
-.questionNew:hover {
+.question-new:hover {
   transform: scale(1.05);
 }
-.questionAnswer {
+.question-answer {
   color: #054205;
 }
-.questionUnAnswer {
+.question-un-answer {
   color: red;
 }
-.changeSelect {
+.change-select {
   cursor: pointer;
 }
-.newQuestion {
+.new-question {
   padding-bottom: 30px;
 }
-.authorNameClass {
+.author-name-class {
   display: flex;
 }
-.signInAuthor {
+.sign-in-author {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -117,18 +117,18 @@ div .form-control {
 div .progress-bar {
   background-color: #7b28a7;
 }
-.logoutButton {
+.logout-button {
   color: #4f7bff;
   cursor: pointer;
   margin-top: 10px;
   margin-right: 45px;
   margin-left: -13em;
 }
-.logoutIcon {
+.logout-icon {
   position: absolute;
   top: 15px;
 }
-#authorName {
+.author-name {
   margin-top: 10px;
   margin-left: 25px;
   height: 30px;

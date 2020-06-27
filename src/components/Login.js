@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import SelectAuthor from './SelectAuthor';
 import { handleInitialData } from '../actions/shared';
 
 class LoginPanel extends Component {
@@ -27,20 +28,9 @@ class LoginPanel extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div className="signInAuthor">
+      <div className="sign-in-author">
         <h1>Please Sign In</h1>
-        <select
-          id="authorName"
-          value={selectAuthor}
-          onChange={this.handleChange}
-        >
-          <option value="" disabled>
-            Choose author
-          </option>
-          <option value="sarahedo">Sarah Edo</option>
-          <option value="johndoe">John Doe</option>
-          <option value="tylermcginnis">Tyler McGinnis</option>
-        </select>
+        <SelectAuthor selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
         <div>{authorAvatarDisplay}</div>
       </div>
     );
