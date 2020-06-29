@@ -22,7 +22,7 @@ class Question extends Component {
  
     event.preventDefault();
 
-    const { dispatch, question, authedUser, qid, optionTwo } = this.props
+    const { dispatch, question, authedUser } = this.props
       // console.log('changeSelect', qid, question, authedUser, question.optionOne.votes.indexOf(authedUser), optionTwo)
     dispatch(handleToggleQuestion({
       qid: question.id,

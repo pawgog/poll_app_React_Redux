@@ -21,10 +21,8 @@ class App extends Component {
             {loading === true ? null :
             <Grid>
               <Row className="show-grid">
-                <Col sm={10} md={10}>
+                <Col className="nav-bar" sm={12} md={12}>
                   <Nav />
-                </Col>
-                <Col sm={2} md={2}>
                   <ChangeAuthor />
                 </Col>
               </Row>

@@ -30,7 +30,7 @@ class LoginPanel extends Component {
     return (
       <div className="sign-in-author">
         <h1>Please Sign In</h1>
-        <SelectAuthor selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
+        <SelectAuthor classAfterLogin={false} selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
         <div>{authorAvatarDisplay}</div>
       </div>
     );

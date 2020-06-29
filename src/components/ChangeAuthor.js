@@ -29,7 +29,7 @@ class ChangeAuthor extends Component {
   };
   render() {
     const { selectAuthor, toLogin } = this.state;
-    const { authorAvatar } = this.props;
+    const { authorAvatar, currentUser } = this.props;
 
     // let authorAvatarDisplay = '';
 
@@ -38,14 +38,14 @@ class ChangeAuthor extends Component {
     }
     return (
       <div className="author-name-class">
+        <div>
+          <img src={authorAvatar} width="50px" height="50px" alt={currentUser} />
+        </div>
+        <SelectAuthor classAfterLogin={true} selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
         <div className="logout-button" onClick={this.logout}>
           Logout
-          <TiExportOutline className="logout-icon tweet-icon" />
+          <TiExportOutline className="tweet-icon" />
         </div>
-        <div>
-          <img src={authorAvatar} width="50px" height="50px" alt="Sarah Edo" />
-        </div>
-        <SelectAuthor selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
       </div>
     );
   }

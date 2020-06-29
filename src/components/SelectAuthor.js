@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function SelectAuthor({ selectAuthor, handleChangeFn }) {
+export default function SelectAuthor({ classAfterLogin, selectAuthor, handleChangeFn }) {
   return (
     <select
-      className="author-name"
+      className={classAfterLogin ? "" : "author-name"}
       value={selectAuthor}
       onChange={handleChangeFn}
     >
