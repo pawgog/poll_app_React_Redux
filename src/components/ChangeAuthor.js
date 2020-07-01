@@ -29,7 +29,7 @@ class ChangeAuthor extends Component {
   };
   render() {
     const { selectAuthor, toLogin } = this.state;
-    const { authorAvatar, currentUser } = this.props;
+    const { authorAvatar, currentUser, authedUser } = this.props;
 
     // let authorAvatarDisplay = '';
 
@@ -41,7 +41,7 @@ class ChangeAuthor extends Component {
         <div>
           <img src={authorAvatar} width="50px" height="50px" alt={currentUser} />
         </div>
-        <SelectAuthor classAfterLogin={true} selectAuthor={selectAuthor} handleChangeFn={this.handleChange} />
+        <SelectAuthor classAfterLogin={true} selectAuthor={selectAuthor} authedUser={authedUser} handleChangeFn={this.handleChange} />
         <div className="logout-button" onClick={this.logout}>
           Logout
           <TiExportOutline className="tweet-icon" />
@@ -61,6 +61,7 @@ function mapStateToProps({ users, authedUser }) {
   return {
     currentUser,
     authorAvatar,
+    authedUser
   };
 }
 

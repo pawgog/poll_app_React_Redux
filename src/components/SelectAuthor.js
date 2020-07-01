@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function SelectAuthor({ classAfterLogin, selectAuthor, handleChangeFn }) {
+export default function SelectAuthor({ classAfterLogin, authedUser, selectAuthor, handleChangeFn }) {
   return (
     <select
       className={classAfterLogin ? "" : "author-name"}
-      value={selectAuthor}
+      value={selectAuthor === "" ? authedUser === undefined ? "" : authedUser : selectAuthor}
       onChange={handleChangeFn}
     >
       <option value="" disabled>
